@@ -7,7 +7,7 @@ class Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300.h,
+      height: 350.h,
       width: double.infinity,
       margin: EdgeInsets.symmetric(
         vertical: 10.h,
@@ -22,82 +22,128 @@ class Item extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.network(
-            "https://www.tboholidays.com//imageresource.aspx?img=FbrGPTrju5cc0AnFUdZvcaT421NYlIIKB899kblH89FRaXRjheAxF0mYu56nxq7ybSts6ps0s7BI/8ugu12yto0k2T4b0SzW",
-            fit: BoxFit.cover,
-            height: 100.h,
-            width: double.infinity,
-          ),
-          SizedBox(
-            height: 5.h,
-          ),
-          Row(
-            children: const [
-              Icon(
-                Icons.star,
+          Stack(
+            children: [
+              Image.network(
+                "https://www.tboholidays.com//imageresource.aspx?img=FbrGPTrju5cc0AnFUdZvcaT421NYlIIKB899kblH89FRaXRjheAxF0mYu56nxq7ybSts6ps0s7BI/8ugu12yto0k2T4b0SzW",
+                fit: BoxFit.cover,
+                height: 100.h,
+                width: double.infinity,
               ),
-              Text(
-                "Hotel",
+              Align(
+                alignment: AlignmentDirectional.topEnd,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: CircleAvatar(
+                    backgroundColor: Colors.grey.withOpacity(
+                      0.5,
+                    ),
+                    child: Icon(
+                      Icons.favorite_border,
+                      size: 25.r,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
           SizedBox(
             height: 5.h,
           ),
-          Text(
-            "Name Of Hotel",
-            style: TextStyle(
-              fontSize: 18.sp,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsets.only(
+              left: 16.w,
+            ),
+            child: Row(
+              children: const [
+                Icon(
+                  Icons.star,
+                ),
+                Text(
+                  "Hotel",
+                ),
+              ],
             ),
           ),
           SizedBox(
             height: 5.h,
           ),
-          Row(
-            children: [
-              Container(
-                height: 25.h,
-                width: 50.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    17.r,
-                  ),
-                  color: Colors.green,
-                ),
-                child: const Center(
-                  child: Text(
-                    "8.8",
-                  ),
-                ),
+          Padding(
+            padding: EdgeInsets.only(left: 16.w),
+            child: Text(
+              "Name Of Hotel",
+              style: TextStyle(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
               ),
-              SizedBox(
-                width: 5.w,
-              ),
-              const Text(
-                "Excellent",
-              ),
-              SizedBox(
-                width: 5.w,
-              ),
-              Row(
-                children: const [
-                  Icon(
-                    Icons.location_on,
-                  ),
-                  Text(
-                    "Hotel Location",
-                  ),
-                ],
-              ),
-            ],
+            ),
           ),
           SizedBox(
             height: 5.h,
           ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 13.w,
+            ),
+            child: Row(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      height: 25.h,
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          17.r,
+                        ),
+                        color: Colors.green,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "8.8",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.sp,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    const Text(
+                      "Excellent",
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    Row(
+                      children: const [
+                        Icon(
+                          Icons.location_on,
+                        ),
+                        Text(
+                          "Hotel Location",
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
           Container(
             height: 100.h,
             width: double.infinity,
+            padding: EdgeInsets.symmetric(
+              horizontal: 10.w,
+            ),
+            margin: EdgeInsets.symmetric(horizontal: 10.w),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
                   8.r,
@@ -129,7 +175,7 @@ class Item extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

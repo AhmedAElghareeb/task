@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 70.h,
+              height: 50.h,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(17.r),
@@ -73,7 +73,7 @@ class HomeView extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, index) => const Item(),
-                itemCount: 3,
+                itemCount: 6,
               ),
             ),
           ],
